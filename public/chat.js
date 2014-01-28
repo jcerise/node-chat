@@ -15,6 +15,7 @@ window.onload = function() {
 				html += messages[i].message + "<br />";
 			}
 			content.innerHTML = html;
+			content.scrollTop = content.scrollHeight
 		} else {
 			console.log("There is a problem:", data);
 		}
@@ -26,6 +27,7 @@ window.onload = function() {
 		} else {
 			var text = field.value;
 			socket.emit('send', { message: text, username: name.value});
+			field.value = '';
 		}
 	};
 }
